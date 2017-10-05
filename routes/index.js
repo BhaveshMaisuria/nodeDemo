@@ -1,11 +1,11 @@
-import user from '../controller/user.js';
-import express from 'express';
-import jwt from 'jsonwebtoken';
-const apiRoutes = express.Router();
-import config from '../config';
-import mongoose  from 'mongoose';
-const Schema = mongoose.Schema;
-import bcrypt  from 'bcrypt-nodejs';
+var user = require ('../controller/user.js');
+var express = require ('express');
+var jwt = require ('jsonwebtoken');
+var apiRoutes = express.Router();
+var config = require ('../config');
+var mongoose  = require ('mongoose');
+var Schema = mongoose.Schema;
+var bcrypt  = require ('bcrypt-nodejs');
 
 module.exports = function(app) {
     app.get('/', function(req, res) {
@@ -13,7 +13,7 @@ module.exports = function(app) {
     });
 
     apiRoutes.use(function(req, res, next) {
-        let token = req.body.token || req.query.token || req.headers.token;
+        var token = req.body.token || req.query.token || req.headers.token;
         if (token) {
             jwt.verify(token, config.secret, function(err, decoded) {
                 if (err) {

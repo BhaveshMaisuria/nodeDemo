@@ -1,8 +1,8 @@
-import mongoose  from 'mongoose';
-const Schema = mongoose.Schema;
-import bcrypt  from 'bcrypt-nodejs';
+var mongoose  = require ('mongoose');
+var Schema = mongoose.Schema;
+var bcrypt  = require ('bcrypt-nodejs');
 
-let UserSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
 
     username: {
         type: String
