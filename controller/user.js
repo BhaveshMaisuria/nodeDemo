@@ -3,7 +3,6 @@ var config = require ('../config');
 var jwt = require ('jsonwebtoken');
 var async = require ('async');
 var qs = require ('querystring');
-var moment = require ('moment-timezone');
 var chalk = require ('chalk');
 
 var register = mongoose.model("user");
