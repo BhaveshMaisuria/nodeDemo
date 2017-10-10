@@ -24,7 +24,6 @@ module.exports = function(app) {
                     });
                 } else {
                     req.user = decoded._doc;
-                    req.userIp = get_ip(req).clientIp;
                     next();
                 }
             });
