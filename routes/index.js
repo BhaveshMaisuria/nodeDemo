@@ -8,10 +8,7 @@ var Schema = mongoose.Schema;
 var bcrypt  = require ('bcrypt-nodejs');
 
 module.exports = function(app) {
-    app.get('/', function(req, res) {
-        res.render('index.ejs');
-    });
-
+    
     apiRoutes.use(function(req, res, next) {
         var token = req.body.token || req.query.token || req.headers.token;
         if (token) {
