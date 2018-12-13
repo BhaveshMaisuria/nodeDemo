@@ -35,6 +35,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(helmet());
+console.log('helmet');
 console.log(helmet());
 var enableCORS = function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
